@@ -44,8 +44,6 @@
 
 #include "lilac/lilac_globals.sp" /* Must be at top, contains defines. */
 
-#include "lilac/lilac_aimbot.sp"
-#include "lilac/lilac_aimlock.sp"
 #include "lilac/lilac_angles.sp"
 #include "lilac/lilac_anti_duck_delay.sp"
 #include "lilac/lilac_backtrack.sp"
@@ -57,6 +55,7 @@
 #include "lilac/lilac_macro.sp"
 #include "lilac/lilac_noisemaker.sp"
 #include "lilac/lilac_ping.sp"
+#include "lilac/lilac_speedhack.sp"
 #include "lilac/lilac_stock.sp"
 #include "lilac/lilac_string.sp" /* String takes care of chat and names. */
 
@@ -165,7 +164,6 @@ public void OnPluginStart()
 	CreateTimer(QUERY_TIMER, timer_query, _, TIMER_REPEAT);
 	CreateTimer(5.0, timer_check_ping, _, TIMER_REPEAT);
 	CreateTimer(5.0, timer_check_lerp, _, TIMER_REPEAT);
-	CreateTimer(0.5, timer_check_aimlock, _, TIMER_REPEAT);
 	CreateTimer(60.0 * 5.0, timer_decrement_macro, _, TIMER_REPEAT);
 
 	tick_rate = RoundToNearest(1.0 / GetTickInterval());
